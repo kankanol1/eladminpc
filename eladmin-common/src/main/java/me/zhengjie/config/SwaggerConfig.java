@@ -37,7 +37,10 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import static com.google.common.collect.Lists.newArrayList;
 import static springfox.documentation.schema.AlternateTypeRules.newRule;
 
@@ -62,6 +65,9 @@ public class SwaggerConfig {
     @Bean
     @SuppressWarnings("all")
     public Docket createRestApi() {
+        Set<String> set = new HashSet<String>();
+        set.add("http");
+        set.add("https");
         ParameterBuilder ticketPar = new ParameterBuilder();
         List<Parameter> pars = new ArrayList<>();
         ticketPar.name(tokenHeader).description("token")
@@ -74,6 +80,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .enable(enabled)
                 .apiInfo(apiInfo())
+                .protocols(set)
                 .select()
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build()
@@ -82,9 +89,9 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .description("一个简单且易上手的 Spring boot 后台管理框架")
-                .title("EL-ADMIN 接口文档")
-                .version("2.4")
+                .description("QXD 后台管理框架")
+                .title("QXD 接口文档")
+                .version("1.0")
                 .build();
     }
 

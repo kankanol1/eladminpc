@@ -24,6 +24,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author Zheng Jie
@@ -33,6 +34,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RequestMapping("/api/genConfig")
 @Api(tags = "系统：代码生成器配置管理")
+@ApiIgnore
 public class GenConfigController {
 
     private final GenConfigService genConfigService;

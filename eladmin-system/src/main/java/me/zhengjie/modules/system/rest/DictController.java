@@ -29,6 +29,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
@@ -39,7 +41,8 @@ import java.util.Set;
 */
 @RestController
 @RequiredArgsConstructor
-@Api(tags = "系统：字典管理")
+@Api(tags = "系统：字典管理",hidden = true)
+@ApiIgnore
 @RequestMapping("/api/dict")
 public class DictController {
 

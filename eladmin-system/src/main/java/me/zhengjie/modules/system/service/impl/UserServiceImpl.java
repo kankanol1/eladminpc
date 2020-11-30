@@ -51,6 +51,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @CacheConfig(cacheNames = "user")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
+
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;

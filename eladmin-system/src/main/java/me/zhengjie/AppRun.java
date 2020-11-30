@@ -28,6 +28,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * 开启审计功能 -> @EnableJpaAuditing
@@ -36,7 +37,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @EnableAsync
 @RestController
-@Api(hidden = true)
+@ApiIgnore
+@Api(tags = "dash")
 @SpringBootApplication
 @EnableTransactionManagement
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
@@ -67,4 +69,5 @@ public class AppRun {
     public String index() {
         return "Backend service started successfully";
     }
+
 }

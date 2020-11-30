@@ -26,6 +26,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * 发送邮件
@@ -35,7 +36,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/email")
-@Api(tags = "工具：邮件管理")
+@Api(tags = "工具：邮件管理",hidden = true)
+@ApiIgnore
 public class EmailController {
 
     private final EmailService emailService;

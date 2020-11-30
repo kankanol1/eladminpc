@@ -22,6 +22,8 @@ import me.zhengjie.annotation.Limit;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -30,7 +32,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @RestController
 @RequestMapping("/api/limit")
-@Api(tags = "系统：限流测试管理")
+@Api(tags = "系统：限流测试管理",hidden = true)
+@ApiIgnore
 public class LimitController {
 
     private static final AtomicInteger ATOMIC_INTEGER = new AtomicInteger();

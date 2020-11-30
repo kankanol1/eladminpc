@@ -28,6 +28,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Set;
@@ -37,7 +39,8 @@ import java.util.Set;
 * @date 2019-08-24
 */
 @RestController
-@Api(tags = "运维：服务器管理")
+@Api(tags = "运维：服务器管理",hidden = true)
+@ApiIgnore
 @RequiredArgsConstructor
 @RequestMapping("/api/serverDeploy")
 public class ServerDeployController {

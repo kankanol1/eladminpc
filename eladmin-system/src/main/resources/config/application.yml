@@ -1,5 +1,17 @@
 server:
   port: 8000
+#  servlet:
+    #     应用的访问路径
+#    context-path: /prod-api/
+    #    context-path: /dev-api/
+  tomcat:
+    # tomcat的URI编码
+    uri-encoding: UTF-8
+    # tomcat最大线程数，默认为200
+    max-threads: 800
+    # Tomcat启动初始化的线程数，默认值25
+    min-spare-threads: 30
+
 
 spring:
   freemarker:
@@ -24,7 +36,8 @@ spring:
   redis:
     #数据库索引
     database: 0
-    host: 127.0.0.1
+#    host: 127.0.0.1
+    host: 106.52.105.214
     port: 6379
     password:
     #连接超时时间

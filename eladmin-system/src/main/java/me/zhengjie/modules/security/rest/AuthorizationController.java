@@ -122,7 +122,9 @@ public class AuthorizationController {
     @ApiOperation("获取验证码")
     @GetMapping(value = "/code")
     public ResponseEntity<Object> getCode(){
+        //https://blog.csdn.net/qq_35992956/article/details/80801962
         // 算术类型 https://gitee.com/whvse/EasyCaptcha
+        // https://gitee.com/whvse/EasyCaptcha
         ArithmeticCaptcha captcha = new ArithmeticCaptcha(111, 36);
         // 几位数运算，默认是两位
         captcha.setLen(2);

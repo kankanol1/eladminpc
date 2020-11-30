@@ -17,8 +17,8 @@
         <module>eladmin-generator</module>
     </modules>
 
-    <name>EL-ADMIN后台管理系统</name>
-    <url>http://auauz.net</url>
+    <name>QXD-后台管理系统</name>
+<!--    <url>http://auauz.net</url>-->
 
     <parent>
         <groupId>org.springframework.boot</groupId>

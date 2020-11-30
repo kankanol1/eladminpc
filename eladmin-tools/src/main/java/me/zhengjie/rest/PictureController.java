@@ -29,6 +29,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import springfox.documentation.annotations.ApiIgnore;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -39,7 +41,8 @@ import java.io.IOException;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/pictures")
-@Api(tags = "工具：免费图床管理")
+@Api(tags = "工具：免费图床管理",hidden = true)
+@ApiIgnore
 public class PictureController {
 
     private final PictureService pictureService;
